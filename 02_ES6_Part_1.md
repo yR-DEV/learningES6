@@ -15,6 +15,7 @@
 ### Stretch Objectives
 
 * Use ES6 features in an Angular or React application.
+* Rewrite some of the examples on this page to include additional ES6 features.
 
 ## Arrow Expression `=>`
 
