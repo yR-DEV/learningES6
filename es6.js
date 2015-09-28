@@ -83,8 +83,13 @@ class Cat extends Animal {
 var w = 'world';
 `Hello ${w}!`
 
-//in es5 is: 
+//in es5 is:
 
 //ES5:
 var w = 'world';
 'Hello ' + w + '!'
+
+
+//this is important and need to remember it when requiring npm and bower packages in my apply
+const $ = require('jquery');
+const ADD_ACTION = 1;
