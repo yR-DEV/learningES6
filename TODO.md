@@ -1,8 +1,3 @@
-* Transpiliers
-	* Babel
-		* REPL (http://babeljs.io/repl/)
-	* Traceur
-	* TypeScript
 * ES2015
 	* Arrow Functions
 	* Classes
