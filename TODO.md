@@ -1,11 +1,4 @@
 * ES2015
-	* Arrow Functions
-	* Classes
-	* Object Literal Enhancements
-	* Template Strings
-	* Destructuring
-	* Let and Const
-	* Parameter Enhancements
 	* Modules
 	* Promises
 	* Iterators
