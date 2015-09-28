@@ -33,21 +33,21 @@ ES4 never existed and ES3 was released in 1999.
 
 Some people refer to ES6 as ES2015.
 
-Talking about JavaScript versions doesn't make as much sense.
-Each browser versions JavaScript its own way.
+Talking about JavaScript versions doesn't make as much sense
+	because each browser versions JavaScript its own way.
 
 ## Transpilers
 
 A [transpiler](https://en.wikipedia.org/wiki/Source-to-source_compiler) is a type of compiler.
 A compiler typically takes source code and outputs machine code.
-But, a transpiler takes source code and outputs source code also.
+But, a transpiler takes source code and outputs more source code.
 [Many](https://github.com/jashkenas/coffeescript/wiki/list-of-languages-that-compile-to-js) transpilers exist in the JS ecosystem.
 
 Some more popular transpilers:
 * [Babel](http://babeljs.io/)
 * [ClojureScript](https://github.com/clojure/clojurescript)
-* [CoffeScript](http://coffeescript.org/)
-* [Dart](https://www.dartlang.org/)
+* [CoffeeScript](http://coffeescript.org/)
+* [Dart](https://www.dartlang.org/) by Google
 * [elm](http://elm-lang.org/)
 * [emscripten](http://kripken.github.io/emscripten-site/)
 * [GWT](http://www.gwtproject.org/) by Google
@@ -59,7 +59,7 @@ Some more popular transpilers:
 * [Traceur](https://github.com/google/traceur-compiler) by Google
 * [TypeScript](http://www.typescriptlang.org/) by Microsoft
 
-They each serve a different purpose.
+Each transpiler serves a different purpose.
 
 ### Babel
 
@@ -67,25 +67,32 @@ Babel transpiles ES6 code to ES5 code.
 This allows us to write ES6 code today!
 Even in browsers with no ES6 support! :open_mouth:
 
-Babel is an [overwhelming popular](http://babeljs.io/users/) transpiler.
+Babel is an [overwhelmingly popular](http://babeljs.io/users/) transpiler.
 It is used by Netflix, Facebook, Mozilla, Yahoo!, PayPal, Airbnb, Reddit,
 	Atlassian, NFL, SoundCloud, Vimeo, Walmart, Slack, Atom, React,
 	mongoDB, LinkedIn, and LoDash just to name a few.
 
-Facebook's React has even [deprecated its own transpiler](https://facebook.github.io/react/blog/2015/09/10/react-v0.14-rc1.html#deprecation-of-react-tools) in favor of Babel.
+Facebook's React has even [deprecated its own JSX transpiler](https://facebook.github.io/react/blog/2015/09/10/react-v0.14-rc1.html#deprecation-of-react-tools) in favor of Babel.
 
 ### Install
 
-[Many ways](http://babeljs.io/docs/setup/#babel_cli) to install Babel.
+There are [many ways](http://babeljs.io/docs/setup/#babel_cli) to install Babel.
 
 Install the CLI version:
-`npm install babel -g`
+```sh
+$ npm install babel -g
+```
 
 ### Use
 
-[Babel CLI Usage](http://babeljs.io/docs/usage/cli/)
+[_[Babel CLI Usage Docs]_](http://babeljs.io/docs/usage/cli/)
 
 To compile a file:
+```sh
+$ babel input.js
+```
+
+To compile a file to a file:
 ```sh
 $ babel input.js -o output.js
 ```
@@ -95,7 +102,7 @@ To compile and watch a file for changes:
 $ babel input.js -o output.js --watch
 ```
 
-To compile with sourcemaps:
+To compile with [sourcemaps](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/):
 ```sh
 $ babel input.js --source-maps
 ```
@@ -128,6 +135,6 @@ $
 
 :sparkles: Congratulations! :sparkles:
 
-The file has been transpiled from ES6 code to ES5 and been ran!
+The file has been transpiled from ES6 code to ES5 and has been run!
 
 Next: [02: ES6 Part 1](02_ES6_Part_1.md)

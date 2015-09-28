@@ -3,18 +3,19 @@
 ## Objectives
 
 * Write an arrow expression.
-* Write a Class using the new `class` syntax.
+* Write a class using the new `class` syntax.
 * Inherit a class from another using the `class extends` syntax.
 * Define an object's properties using new object literal syntaxes.
 * Interpolate a string using a String Template.
 * Extract values from an object and an array using destructuring.
 * Discuss the difference between `var`, `let`, and `const`.
-* Define a function using the `rest` operator and default parameters.
-* Call a function using the `spread` operator.
+* Define a function using the `...` `rest` operator.
+* Define a function using default parameters.
+* Call a function using the `...` `spread` operator.
 
 ### Stretch Objectives
 
-* Use ES6 features in an Angular or React application.
+* Use ES6 features in an Angular, Express, React, etc. application.
 * Rewrite some of the examples on this page to include additional ES6 features.
 
 ## Arrow Expression `=>`
@@ -27,7 +28,6 @@ An arrow expression is a shortcut for writing functions.
 One key difference is that `=>` automatically binds to the parent's `this`.
 It also explicitly will return the last line of the function if no return is specified.
 
-It can take on a few forms:
 ```js
 //basic form
 (parameter1, parameter2, parameterN) => {body}
@@ -85,7 +85,7 @@ var cat = {
   _name: 'cat',
   _words: ['meow', 'mrow', 'purr'],
   sounds: function sounds() {
-    var _this = this;
+    var _this = this; //Aliasing this
     this._words.forEach(function (w) {
       console.log(_this._name + ' goes ' + w);
       return _this;
@@ -101,11 +101,10 @@ var cat = {
 [_[ES6 In Depth]_](http://ponyfoo.com/articles/es6-classes-in-depth)
 
 `class` brings a more concise way to write prototypical classes in JS.
-An important note is that this is not a JS Object.
-There are no commas in between methods.
+An important note is that this is not a JS Object; there are no commas in between methods.
 `extends` is also added to clearly set up a class prototype.
-This introduces new items to the scope.
-`super` is included and can be used to call a parent class' methods.
+`super` is included in the scope
+	and can be used to call a parent class' methods.
 
 ```js
 //Basic syntax
@@ -224,17 +223,17 @@ var secret = 42;
 var object = {
   getData() {},
   secret,
-  [1+3]: 4
+  [1+3]: 'four'
 };
 
 //ES5
 var secret = 42;
-var key = 1+3;
 var object = {
 	getData: function getData () {},
-	secret: secret,
-	key: 4
+	secret: secret
 };
+var key = 1+3;
+object[key] = 'four';
 ```
 
 ## Template Strings <code>``</code>
@@ -269,11 +268,11 @@ tag`Hello ${w}!`
 ```js
 //ES6:
 var w = 'world';
-`Hello ${world}!`
+`Hello ${w}!`
 
 //ES5:
 var w = 'world';
-'Hello ' + world + '!'
+'Hello ' + w + '!'
 ```
 
 ### Example
@@ -281,10 +280,15 @@ var w = 'world';
 ```js
 //ES6:
 `Hello
-world!`
+world
+!`
 
 //ES5:
-'Hello\nworld!'
+[
+	'Hello',
+	'world',
+	'!'
+].join('\n');
 ```
 
 ## Destructuring
@@ -294,6 +298,7 @@ world!`
 
 Destructuring provides shorthand for retrieving values from objects and arrays
 	to store their values in variables.
+It uses pattern matching to match variable names with keys.
 
 ```js
 //object pattern matching
@@ -313,7 +318,7 @@ var {foo, name, other: {deep}} = data;
 var data = {name: 'Danny', foo: 'bar', other: {deep: 1337}};
 var foo = data.foo;
 var name = data.name;
-var other = data.other.deep;
+var deep = data.other.deep;
 ```
 
 ### Example
@@ -378,12 +383,14 @@ for (var i=1; i<=5; i++) {
 
 ```js
 //ES6
+const $ = require('jquery');
 const ADD_ACTION = 1;
 
-//No ES5 equivalent
+//No true ES5 equivalent
+var $ = require('jquery')
 ```
 
-## Parameter Enhancements `...`
+## Parameter Enhancements: Default, Rest `...`, and Spread `...`
 
 [_[Babel Docs]_](http://babeljs.io/docs/learn-es2015/#default-rest-spread)
 [_[MDN spread]_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator)
@@ -407,7 +414,7 @@ function (...restName) {}
 //spread
 functionCall(...[])
 
-//default
+//default parameter value
 function (parameterName = defaultValue) {}
 ```
 
