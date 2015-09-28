@@ -311,8 +311,10 @@ var [a, b] = [1, 2]
 ### Example
 ```
 //ES6:
+```
 var data = {name: 'Danny', foo: 'bar', other: {deep: 1337}};
 var {foo, name, other: {deep}} = data;
+```
 
 //ES5:
 var data = {name: 'Danny', foo: 'bar', other: {deep: 1337}};
